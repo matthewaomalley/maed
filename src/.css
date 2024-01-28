@@ -1,0 +1,45 @@
+ 
+ 
+ /* space around columns */
+.box {
+    box-sizing: border-box;
+    border: 5px solid transparent;
+    background-clip: padding-box;
+    padding: 0
+  }
+  
+/* reset some styles */
+body, h1, h2, h3, h4, h5, h6, p, div {
+    text-align: left;
+    margin: 0
+}
+
+/* main titles */
+.title {
+    font-size: 24px;
+}
+
+.greyedSubText {
+    font-size: 16px;
+    color: #9B9A97;
+}
+
+.chipSpan {
+    font-size: 16px;
+    color: 'black';
+    paddingLeft: '10px';
+    paddingRight: '10px'
+    backgroundColor: 'red'
+    borderRadius: '10px'
+
+}
+
+/* sub  titles */
+.subtitle {
+    font-size: 16px;
+}
+
+/* willr emove later bruh */
+.jobdescsect {
+    padding-bottom: 15px;
+}
