@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Apply from './apply';
+import Apply from './screens/Apply/Apply';
 
 function App() {
   return (
