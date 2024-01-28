@@ -56,16 +56,21 @@ const JobDescription = ({ }) => (
             </li>
         </ul>
 
-        <p style={{ ...jobDescriptionStyles.subtitle, marginBottom: 5 }}>Salary Range</p>
+        <p style={{ ...jobDescriptionStyles.subtitle, paddingTop: '10px' }}>Salary Range</p>
         <p><span style={{ ...jobDescriptionStyles.chipSpan, ...jobDescriptionStyles.subtitle, backgroundColor: '#dfecdd', color: '#1F3345' }}><IoLogoUsd style={{ fontSize: '16px', color: '#769a7f', marginBottom: 3 }} />60,000 - 72,000 per year</span></p>
 
-        <p style={{ ...jobDescriptionStyles.subtitle, marginBottom: 5, paddingTop: 25 }}>Benefits</p>
+        <p style={{ ...jobDescriptionStyles.subtitle, paddingTop: '10px'}}>Benefits</p>
         <div style={jobDescriptionStyles.benefitsGrid}>
-            <div><span style={{ ...jobDescriptionStyles.chipSpan, backgroundColor: 'lightgrey' }}>401(k)</span></div>
-            <div><span style={{ ...jobDescriptionStyles.chipSpan, backgroundColor: 'lightgrey' }}>Health Insurance</span></div>
-            <div><span style={{ ...jobDescriptionStyles.chipSpan, backgroundColor: 'lightgrey' }}>Paid Time Off</span></div>
-            <div><span style={{ ...jobDescriptionStyles.chipSpan, backgroundColor: 'lightgrey' }}>Remote Work</span></div>
+            <span style={{ ...jobDescriptionStyles.chipSpan, backgroundColor: '#EFEFEF' }}>401(k)</span>
+            <span style={{ ...jobDescriptionStyles.chipSpan, backgroundColor: '#EFEFEF' }}>Health Insurance</span>
+            <span style={{ ...jobDescriptionStyles.chipSpan, backgroundColor: '#EFEFEF' }}>Paid Time Off</span>
+            <span style={{ ...jobDescriptionStyles.chipSpan, backgroundColor: '#EFEFEF' }}>Remote Work</span>
+            <span style={{ ...jobDescriptionStyles.chipSpan, backgroundColor: '#EFEFEF' }}>Health Insurance</span>
+            <span style={{ ...jobDescriptionStyles.chipSpan, backgroundColor: '#EFEFEF' }}>Paid Time Off</span>
+            <span style={{ ...jobDescriptionStyles.chipSpan, backgroundColor: '#EFEFEF' }}>Remote Work</span>
+            
         </div>
+
     </div>
 );
 
@@ -74,7 +79,7 @@ const jobDescriptionStyles = {
         boxSizing: 'border-box',
         border: '12px solid transparent',
         backgroundClip: 'padding-box',
-        padding: 0,
+        padding: '0 20px 0 0',
         borderRadius: 15
     },
     bodytext: {
@@ -88,6 +93,11 @@ const jobDescriptionStyles = {
         color: '#373530',
         fontFamily: 'SFProMed',
         marginBottom: 5,
+    },
+    benefitsGrid: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: '8px', // Adjust the gap as needed for spacing
     },
     chipSpan: {
         display: 'inline-flex',

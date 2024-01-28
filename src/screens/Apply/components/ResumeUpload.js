@@ -44,6 +44,7 @@ const resumeUploadStyles = {
         color: '#4283DB',
         cursor: 'pointer',
         pointerEvents: 'auto',
+        fontFamily: 'SFProReg',
         fontSize: 14
     },
     greyText: {
