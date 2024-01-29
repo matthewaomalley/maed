@@ -5,7 +5,7 @@ import { LuDot } from "react-icons/lu";
 const customBullet = <LuDot style={{ color: 'black', marginRight: '2px', paddingBottom: 1, fontSize: '22px' }} />;
 
 const JobDescription = ({ }) => (
-    <div className="col-md-7" style={{ ...jobDescriptionStyles.box }}>
+    <div style={{ ...jobDescriptionStyles.box }}>
 
         <p style={jobDescriptionStyles.bodytext}>Viderity is an award-winning consulting firm that provides IT and outreach services to federal agencies and commercial organizations. You'll be working with a friendly and whip-smart team supporting a well-known organization responsible for exciting discoveries ranging from the first internet browser to black holes to the first semiconductor!</p>
 

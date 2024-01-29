@@ -3,7 +3,7 @@ import { FaLocationDot } from "react-icons/fa6";
 
 const JobInfo = () => {
     return (
-        <div className="col-md-6" style={jobInfoStyles.box}>
+        <div style={{...jobInfoStyles.box}}>
             <p style={jobInfoStyles.title}>Junior Frontend Developer</p>
             <p style={jobInfoStyles.greyedSubText}>at Viderity Inc.</p>
             <p style={{ marginTop: -8 }}>
