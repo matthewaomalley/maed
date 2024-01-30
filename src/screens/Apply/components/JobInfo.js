@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaLocationDot } from "react-icons/fa6";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { IconChip, ChipList } from '../../Chips';
 
 const JobInfo = () => {
     return (
@@ -12,10 +13,13 @@ const JobInfo = () => {
                 <p style={jobInfoStyles.moreJobsText}>View All Jobs</p>
             </div>
             <p style={{ marginTop: -8 }}>
-                <span style={jobInfoStyles.chipSpan}>
-                    <FaLocationDot style={jobInfoStyles.locationIcon} />
-                    Mountain View, CA.
-                </span>
+                <IconChip
+                    icon={<FaLocationDot />}
+                    text="Alexandria, VA."
+                    backgroundColor="#d7e5ee"
+                    iconColor="#6996ba"
+                    textColor="#1F3345"
+                />
             </p>
         </div>
     );
@@ -38,16 +42,6 @@ const jobInfoStyles = {
         fontSize: 16,
         color: '#9B9A97',
         fontFamily: 'SFProReg'
-    },
-    chipSpan: {
-        display: 'inline-flex',
-        alignItems: 'center',
-        fontSize: 16,
-        color: '#373530',
-        backgroundColor: '#d7e5ee',
-        borderRadius: 15,
-        padding: '4px 10px',
-        fontFamily: 'SFProMed'
     },
     locationIcon: {
         fontSize: '16px',

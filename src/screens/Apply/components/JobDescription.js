@@ -1,6 +1,7 @@
 import React from 'react';
 import { IoLogoUsd } from "react-icons/io";
 import { LuDot } from "react-icons/lu";
+import { IconChip, ChipList } from '../../Chips';
 
 const customBullet = <LuDot style={{ color: 'black', marginRight: '2px', paddingBottom: 1, fontSize: '22px' }} />;
 
@@ -57,18 +58,25 @@ const JobDescription = ({ }) => (
         </ul>
 
         <p style={{ ...jobDescriptionStyles.subtitle, paddingTop: '10px' }}>Salary Range</p>
-        <p><span style={{ ...jobDescriptionStyles.chipSpan, ...jobDescriptionStyles.subtitle, backgroundColor: '#dfecdd', color: '#1F3345' }}><IoLogoUsd style={{ fontSize: '16px', color: '#769a7f', marginBottom: 3 }} />60,000 - 72,000 per year</span></p>
+        <IconChip
+            icon={<IoLogoUsd />}
+            text="60,000 - 72,000 per year"
+            backgroundColor="#dfecdd"
+            iconColor="#769a7f"
+            textColor="#1F3345"
+        />
 
-        <p style={{ ...jobDescriptionStyles.subtitle, paddingTop: '10px'}}>Benefits</p>
+        <p style={{ ...jobDescriptionStyles.subtitle, paddingTop: '10px' }}>Benefits</p>
         <div style={jobDescriptionStyles.benefitsGrid}>
-            <span style={{ ...jobDescriptionStyles.chipSpan, backgroundColor: '#EFEFEF' }}>401(k)</span>
-            <span style={{ ...jobDescriptionStyles.chipSpan, backgroundColor: '#EFEFEF' }}>Health Insurance</span>
-            <span style={{ ...jobDescriptionStyles.chipSpan, backgroundColor: '#EFEFEF' }}>Paid Time Off</span>
-            <span style={{ ...jobDescriptionStyles.chipSpan, backgroundColor: '#EFEFEF' }}>Remote Work</span>
-            <span style={{ ...jobDescriptionStyles.chipSpan, backgroundColor: '#EFEFEF' }}>Health Insurance</span>
-            <span style={{ ...jobDescriptionStyles.chipSpan, backgroundColor: '#EFEFEF' }}>Paid Time Off</span>
-            <span style={{ ...jobDescriptionStyles.chipSpan, backgroundColor: '#EFEFEF' }}>Remote Work</span>
-            
+            <ChipList
+                items={[
+                    { text: "401(k)" },
+                    { text: "Health Insurance" },
+                    { text: "Paid Time Off" },
+                    { text: "Remote Work" }
+                ]}
+                backgroundColor="#EFEFEF"
+            />
         </div>
 
     </div>
@@ -93,21 +101,6 @@ const jobDescriptionStyles = {
         color: '#373530',
         fontFamily: 'SFProMed',
         marginBottom: 5,
-    },
-    benefitsGrid: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: '8px',
-    },
-    chipSpan: {
-        display: 'inline-flex',
-        alignItems: 'center',
-        fontSize: 16,
-        color: '#373530',
-        backgroundColor: '#d7e5ee',
-        borderRadius: 15,
-        padding: '4px 10px',
-        fontFamily: 'SFProMed'
     },
     listItem: {
         display: 'flex'
