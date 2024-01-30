@@ -7,10 +7,10 @@ const customBullet = <LuDot style={{ color: 'black', marginRight: '2px', padding
 const JobDescription = ({ }) => (
     <div style={{ ...jobDescriptionStyles.box }}>
 
-        <p style={jobDescriptionStyles.bodytext}>Viderity is an award-winning consulting firm that provides IT and outreach services to federal agencies and commercial organizations. You'll be working with a friendly and whip-smart team supporting a well-known organization responsible for exciting discoveries ranging from the first internet browser to black holes to the first semiconductor!</p>
+        <p style={jobDescriptionStyles.bodytext}>Google is an award-winning consulting firm that provides IT and outreach services to federal agencies and commercial organizations. You'll be working with a friendly and whip-smart team supporting a well-known organization responsible for exciting discoveries ranging from the first internet browser to black holes to the first semiconductor!</p>
 
         <p style={jobDescriptionStyles.subtitle}>Job Description</p>
-        <p style={jobDescriptionStyles.bodytext}>We are currently seeking a highly motivated and skilled Junior Frontend Developer to join our dynamic team at Viderity, supporting the National Science Foundation. As a Junior Frontend Developer, you will design, develop, and implement web-based client applications using a variety front-end tools and technologies to support business requirements. You will also follow approved Agile life cycle methodologies, adhere to modern JavaScript coding standards, and perform related front-end tasks including resolving technical issues through debugging, research, and investigation.</p>
+        <p style={jobDescriptionStyles.bodytext}>We are currently seeking a highly motivated and skilled Junior Frontend Developer to join our dynamic team at Google, supporting the National Science Foundation. As a Junior Frontend Developer, you will design, develop, and implement web-based client applications using a variety front-end tools and technologies to support business requirements. You will also follow approved Agile life cycle methodologies, adhere to modern JavaScript coding standards, and perform related front-end tasks including resolving technical issues through debugging, research, and investigation.</p>
 
         <p style={jobDescriptionStyles.subtitle}>Required Skills</p>
         <ul style={{ ...jobDescriptionStyles.bodytext, listStyle: 'none' }}>
@@ -97,7 +97,7 @@ const jobDescriptionStyles = {
     benefitsGrid: {
         display: 'flex',
         flexWrap: 'wrap',
-        gap: '8px', // Adjust the gap as needed for spacing
+        gap: '8px',
     },
     chipSpan: {
         display: 'inline-flex',

@@ -31,14 +31,12 @@ const ApplicationForm = ({ onFormSubmit }) => {
         const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         const phoneRegex = /^\d{3}-\d{3}-\d{4}$/;
 
-        // Function to split camelCase and capitalize each word
+        // function to split camelCase and capitalize each word
         const formatFieldName = (fieldName) => {
             return fieldName
-                // Split camelCase into words
                 .replace(/([A-Z])/g, ' $1')
-                // Capitalize the first letter of each word
                 .replace(/^./, str => str.toUpperCase())
-                .replace(/ /g, ' '); // Replace spaces with a single space
+                .replace(/ /g, ' ');
         };
 
         switch (name) {
@@ -64,7 +62,6 @@ const ApplicationForm = ({ onFormSubmit }) => {
         return '';
     };
 
-
     // input validation for form submission
     const validateForm = () => {
         let newErrors = {};
@@ -89,7 +86,6 @@ const ApplicationForm = ({ onFormSubmit }) => {
         return Object.keys(newErrors).length === 0;
     };
 
-
     // when field changes, update new value in form data state & clear errors
     const handleInputChange = (field) => (event) => {
         let { value } = event.target;
@@ -110,11 +106,10 @@ const ApplicationForm = ({ onFormSubmit }) => {
         }
     };
 
-
     // submit the form if it passes validation
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (!validateForm()) {
+        if (validateForm()) {
             console.log("Form Submitted", formData);
             setIsModalOpen(true);  // Open the modal
             onFormSubmit();        // Notify Apply component about the submission
@@ -148,7 +143,6 @@ const ApplicationForm = ({ onFormSubmit }) => {
         setCoverLetter(file);
     };
 
-
     return (
         <div style={{ ...applicationFormStyles.box, backgroundColor: '#F6F6F6', padding: 20 }}>
             {isModalOpen && (
@@ -173,7 +167,7 @@ const ApplicationForm = ({ onFormSubmit }) => {
                             value={formData[field]}
                             onChange={handleInputChange(field)}
                             error={errors[field]}
-                            isRequired={true} // render asterisk
+                            isRequired={true}
                         />
                     ))}
                     <ResumeUpload label="Attach Resume" onUpload={handleResumeUpload} error={errors.resume} isRequired={true} />
@@ -199,8 +193,6 @@ const ApplicationForm = ({ onFormSubmit }) => {
             )}
         </div>
     );
-
-
 };
 
 const applicationFormStyles = {

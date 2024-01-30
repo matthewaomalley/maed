@@ -5,11 +5,11 @@ const Modal = ({ isOpen, onClose, headerText, contentText, imageSrc }) => {
 
     return (
         <div style={modalStyles.modal}>
-        <div style={modalStyles.content}>
-            <div style={modalStyles.header}>
-                <p style={modalStyles.headerText}>Job Applied!</p>
-                <button style={modalStyles.x} onClick={onClose}>&times;</button>
-            </div>
+            <div style={modalStyles.content}>
+                <div style={modalStyles.header}>
+                    <p style={modalStyles.headerText}>Job Applied!</p>
+                    <button style={modalStyles.x} onClick={onClose}>&times;</button>
+                </div>
                 <div style={modalStyles.image}>
                     <img src={imageSrc} alt="Image here" />
                 </div>
@@ -48,13 +48,13 @@ const modalStyles = {
         textAlign: 'center',
     },
     header: {
-        position: 'relative', // Set the header container to relative
+        position: 'relative',
         marginBottom: '20px',
     },
     headerText: {
         fontFamily: 'SFProMed',
         fontSize: 18,
-        margin: 0, // Reset default margin
+        margin: 0,
     },
     image: {
         maxWidth: '100%',
@@ -77,10 +77,10 @@ const modalStyles = {
         fontSize: 14,
     },
     x: {
-        position: 'absolute', // Position the button absolutely
-        top: '10px', // Center it vertically
-        right: '2px', // Distance from the right edge
-        transform: 'translateY(-50%)', // Adjust vertical alignment
+        position: 'absolute',
+        top: '10px',
+        right: '2px',
+        transform: 'translateY(-50%)',
         border: 'none',
         backgroundColor: 'transparent',
         fontSize: '26px',
@@ -88,6 +88,5 @@ const modalStyles = {
         color: 'grey'
     },
 };
-
 
 export default Modal;

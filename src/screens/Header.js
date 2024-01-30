@@ -21,12 +21,6 @@ const headerStyles = {
     padding: '0 20px',
 };
 
-// make asterik only show for required
-// make resume reuiqred so give error message functionality
-
-
-
-
 const logoStyles = {
     height: '40px',
 };

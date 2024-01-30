@@ -25,7 +25,7 @@ const ResumeUpload = ({ label, onUpload, isRequired = false, error }) => {
     };
 
     return (
-        <div style={{ ...resumeUploadStyles.applicationFormLabel, display: 'flex', flexDirection: 'column', marginBottom: '0.5rem' }}>
+        <div style={{ ...resumeUploadStyles.applicationFormLabel, display: 'flex', flexDirection: 'column', marginBottom: '0.2rem' }}>
             <div style={{display: 'flex', alignItems: 'center'}}>
                 <label htmlFor="resume" style={resumeUploadStyles.formLabel}>
                     {label} {isRequired && !fileSelected && <span style={{color: 'red'}}>*</span>}
@@ -41,25 +41,19 @@ const ResumeUpload = ({ label, onUpload, isRequired = false, error }) => {
                     onClick={() => document.getElementById('resume').click()}>Attach File
                 </span>
             </div>
-            <p style={{...resumeUploadStyles.greyText, fontSize: 10, marginTop: 4}}>Accepted file types: .pdf, .doc, .docx, .txt, .rtf</p>
+            <p style={{...resumeUploadStyles.greyText, fontSize: 10, marginTop: 4}}>Accepted file types: .pdf, .doc, .docx, .txt</p>
             <input
                 type="file"
                 id="resume"
                 style={{ display: 'none' }}
-                accept=".pdf,.doc,.docx"
+                accept=".pdf,.doc,.docx,.txt"
                 onChange={handleFileChange}
             />
         </div>
     );
 };
 
-
 const resumeUploadStyles = {
-    resumeUpload: {
-        display: 'flex', 
-        flexDirection: 'column', 
-        marginBottom: '0.5rem'
-    },
     formLabel: {
         color: '#373530',
         fontSize: '14px',
@@ -72,7 +66,7 @@ const resumeUploadStyles = {
         borderRadius: '5px',
         textAlign: 'center',
         pointerEvents: 'none',
-        paddingBottom: '12px'
+        paddingBottom: '12px',
     },
     resumeUploadButtonText: {
         color: '#4283DB',

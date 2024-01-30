@@ -14,8 +14,8 @@ const Apply = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleFormSubmission = () => {
-        setIsSubmitted(true);
-        setIsModalOpen(true); // Open the modal upon submission
+        setIsSubmitted(true); // set submission complete to true
+        setIsModalOpen(true); // open success modal
     };
 
     const closeModal = () => {
@@ -26,6 +26,7 @@ const Apply = () => {
         <div style={{ backgroundColor: '#FCFCFC' }}>
             <Header />
             <div className="container mt-2 mb-4">
+
                 {/* Row for JobInfo */}
                 <div className={`row ${isSubmitted ? 'justify-content-center' : ''}`}>
                     <div className={isSubmitted ? "col-7" : "col-md-7"}>
@@ -33,7 +34,7 @@ const Apply = () => {
                     </div>
                 </div>
 
-                {/* Row for SuccessBanner, centered and same width as JobInfo */}
+                {/* Row for SuccessBanner */}
                 {isSubmitted && (
                     <div className="row justify-content-center">
                         <div className="col-7">
@@ -48,11 +49,11 @@ const Apply = () => {
                         <JobDescription />
                     </div>
 
-                    {/* ApplicationForm is only shown if not submitted */}
+                    {/* ApplicationForm is only shown if form is not submitted */}
                     {!isSubmitted && (
                         <div className="col-md-5">
                             <ApplicationForm onFormSubmit={handleFormSubmission} />
-                        </div>
+                        </div> 
                     )}
                 </div>
             </div>

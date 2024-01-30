@@ -1,15 +1,20 @@
 import React from 'react';
 import { FaLocationDot } from "react-icons/fa6";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 const JobInfo = () => {
     return (
-        <div style={{...jobInfoStyles.box}}>
+        <div style={jobInfoStyles.box}>
             <p style={jobInfoStyles.title}>Junior Frontend Developer</p>
-            <p style={jobInfoStyles.greyedSubText}>at Viderity Inc.</p>
+            <div style={jobInfoStyles.companyAndIconContainer}>
+                <p style={jobInfoStyles.greyedSubText}>at Google</p>
+                <FaLongArrowAltRight style={jobInfoStyles.arrowIcon} />
+                <p style={jobInfoStyles.moreJobsText}>View All Jobs</p>
+            </div>
             <p style={{ marginTop: -8 }}>
                 <span style={jobInfoStyles.chipSpan}>
                     <FaLocationDot style={jobInfoStyles.locationIcon} />
-                    Alexandria, VA
+                    Mountain View, CA.
                 </span>
             </p>
         </div>
@@ -48,7 +53,30 @@ const jobInfoStyles = {
         fontSize: '16px',
         color: '#6996ba',
         marginRight: 4
-    }
+    },
+    companyAndIconContainer: {
+        display: 'flex',
+        alignItems: 'center',
+    },
+    moreJobsText: {
+        fontFamily: 'SFProReg',
+        fontSize: 14,
+        color: '#4283db',
+        cursor: 'pointer',
+        textDecoration: 'none',
+        '&:hover': {
+            textDecoration: 'underline',
+        },
+        paddingTop: '2px'
+    },
+    arrowIcon: {
+        marginLeft: '5px',
+        marginRight: '5px',
+        color: '#4283db',
+        fontSize: 14,
+        marginBottom: 14,
+        marginLeft: 10,
+    },
 };
 
 export default JobInfo;
