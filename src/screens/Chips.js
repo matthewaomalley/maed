@@ -1,54 +1,62 @@
 import React from 'react';
 
-// IconChip Component
-const IconChip = ({
-    icon,
-    text,
-    backgroundColor = '#d7e5ee',
-    iconColor = '#373530',
-    textColor = '#373530'
-}) => {
-    const styles = {
-        chipSpan: {
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: 16,
-            color: textColor,
-            backgroundColor: backgroundColor,
-            borderRadius: 15,
-            padding: '4px 10px',
-            fontFamily: 'SFProMed',
-            margin: '4px',
+const chipStyles = {
+    title: {
+        fontSize: 16,
+        color: '#373530',
+        fontFamily: 'SFProMed',
+        marginBottom: '5px',
+        paddingTop: '10px'
+    },
+    chipSpan: {
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: 16,
+        color: '#373530',
+        backgroundColor: '#d7e5ee',
+        borderRadius: 15,
+        padding: '4px 10px',
+        fontFamily: 'SFProMed',
+        margin: '4px',
+    },
+    iconStyle: {
+        marginRight: '5px',
+        color: '#373530'
+    },
+    chipContainer: {
+        display: 'flex',
+        flexWrap: 'wrap',
+    }
+};
 
-        },
-        iconStyle: {
-            marginRight: '5px',
-            color: iconColor
-        }
-    };
-
+const IconChip = ({ title, icon, text, backgroundColor, iconColor, textColor }) => {
     return (
-        <span style={styles.chipSpan}>
-            {icon && React.cloneElement(icon, { style: styles.iconStyle })}
-            {text}
-        </span>
+        <div>
+            {title && <p style={{ ...chipStyles.title }}>{title}</p>}
+            <span style={{ ...chipStyles.chipSpan, backgroundColor: backgroundColor || chipStyles.chipSpan.backgroundColor, color: textColor || chipStyles.chipSpan.color }}>
+                {icon && React.cloneElement(icon, { style: { ...chipStyles.iconStyle, color: iconColor || chipStyles.iconStyle.color }})}
+                {text}
+            </span>
+        </div>
     );
 };
 
-// ChipList Component
-const ChipList = ({ items, backgroundColor, color }) => {
+const ChipList = ({ title, items, backgroundColor, color }) => {
     return (
-        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-            {items.map((item, index) => (
-                <IconChip
-                    key={index}
-                    icon={item.icon}
-                    text={item.text}
-                    backgroundColor={backgroundColor}
-                    color={color}
-                />
-            ))}
+        <div>
+            {title && <p style={{ ...chipStyles.title, marginTop: '10px' }}>{title}</p>}
+            <div style={chipStyles.chipContainer}>
+                {items.map((item, index) => (
+                    <IconChip
+                        key={index}
+                        icon={item.icon}
+                        text={item.text}
+                        backgroundColor={backgroundColor}
+                        color={color}
+                    />
+                ))}
+            </div>
         </div>
     );
 };

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import ResumeUpload from './ResumeUpload';
-import InputField from './InputField';
+import { InputField, ResumeUpload } from '../../InputField';
 import Modal from '../../Modal'
 
 const ApplicationForm = ({ onFormSubmit }) => {
@@ -147,7 +146,6 @@ const ApplicationForm = ({ onFormSubmit }) => {
         <div style={{ ...applicationFormStyles.box, backgroundColor: '#F6F6F6', padding: 20 }}>
             {isModalOpen && (
                 <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-                    {/* Modal content */}
                     <h2>Submission Successful</h2>
                     <p>Your form has been submitted successfully.</p>
                     <button onClick={() => setIsModalOpen(false)}>Close</button>
@@ -156,22 +154,55 @@ const ApplicationForm = ({ onFormSubmit }) => {
 
             {!isModalOpen && (
                 <form noValidate onSubmit={handleSubmit}>
-                    <p style={{ ...applicationFormStyles.title, fontFamily: 'SFProBold', paddingBottom: 5 }}>Application</p>
-                    {['firstName', 'lastName', 'email', 'phone'].map(field => (
-                        <InputField
-                            key={field}
-                            label={formatLabel(field)}
-                            id={field}
-                            placeholder={getPlaceholder(field)}
-                            type={field === 'email' ? 'email' : field === 'phone' ? 'tel' : 'text'}
-                            value={formData[field]}
-                            onChange={handleInputChange(field)}
-                            error={errors[field]}
-                            isRequired={true}
-                        />
-                    ))}
-                    <ResumeUpload label="Attach Resume" onUpload={handleResumeUpload} error={errors.resume} isRequired={true} />
-                    <ResumeUpload label="Cover Letter" onUpload={handleCoverLetterUpload} />
+                    <p style={{ ...applicationFormStyles.title, fontFamily: 'SFProBold', paddingBottom: '5px' }}>Application</p>
+                    <InputField
+                        label="First Name"
+                        id="firstName"
+                        placeholder="Johnny"
+                        value={formData.firstName}
+                        onChange={handleInputChange('firstName')}
+                        error={errors.firstName}
+                        isRequired={true}
+                    />
+                    <InputField
+                        label="Last Name"
+                        id="lastName"
+                        placeholder="Appleseed"
+                        value={formData.lastName}
+                        onChange={handleInputChange('lastName')}
+                        error={errors.lastName}
+                        isRequired={true}
+                    />
+                    <InputField
+                        label="Email"
+                        id="email"
+                        placeholder="username@gmail.com"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleInputChange('email')}
+                        error={errors.email}
+                        isRequired={true}
+                    />
+                    <InputField
+                        label="Phone Number"
+                        id="phone"
+                        placeholder="123-456-7890"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={handleInputChange('phone')}
+                        error={errors.phone}
+                        isRequired={true}
+                    />
+                    <ResumeUpload
+                        label="Resume"
+                        onUpload={handleResumeUpload}
+                        error={errors.resume}
+                        isRequired={true}
+                    />
+                    <ResumeUpload
+                        label="Cover Letter"
+                        onUpload={handleCoverLetterUpload}
+                    />
 
                     <div style={applicationFormStyles.formFooter}>
                         <div style={applicationFormStyles.checkboxContainer}>
